@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Stery Sabu">
+    <meta name="description" content="Personal Resume Website">
+    <title>Stery Sabu - Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Stery Sabu</h1>
+            <p>Aspiring Developer | Web Development Enthusiast</p>
+            <button onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi! I'm Stery Sabu, a passionate aspiring developer currently studying at Fr. Conceicao Rodrigues College of Engineering. I'm interested in programming, web development, and building impactful digital solutions. I'm continuously improving my skills and looking forward to contributing to innovative projects.</p>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Education</h2>
+            <ul>
+                <li>Fr. Conceicao Rodrigues College of Engineering (Graduation: 2027)</li>
+                <li>St. Anne's Convent School, Vasai(w) (Secondary: 2021, Higher Secondary: 2023)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: Java, C++, C</li>
+                <li>Web Development: HTML, CSS</li>
+                <li>Soft Skills: Communication, Teamwork, Time Management</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <form id="contact-form" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Stery Sabu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<style>
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth Scroll Effect */
+section {
+    padding: 20px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styling for Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode header {
+    background-color: #444;
+}
+
+.dark-mode footer {
+    background-color: #444;
+}
+
+.dark-mode section {
+    background-color: #555;
+}
+
+.dark-mode button {
+    background-color: #28a745;
+    color: white;
+}
+
+.dark-mode button:hover {
+    background-color: #218838;
+}
+
+.dark-mode nav a {
+    color: #fff;
+}
+
+.dark-mode nav a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+</style>
+</body>
+</html>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Contact Form Validation
+function validateForm() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+
+    // Basic validation
+    if (name === "" || email === "" || message === "") {
+        alert("All fields must be filled out!");
+        return false; // Prevent form submission
+    }
+
+    // Email format check (simple)
+    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    alert("Thank you for your message! I will get back to you soon.");
+    return true; // Allow form submission
+}
+
+// Dark/Light Mode Toggle
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
+
+// Scroll-based Animations
+window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) {
+            section.classList.add('visible');
+        }
+    });
+});
+</script>
